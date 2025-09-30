@@ -53,7 +53,7 @@ public class PlanController {
     }
 
     @DeleteMapping("/{code}")
-    public ResponseEntity<Void> delete(@PathVariable String code) {
+    public ResponseEntity<Object> delete(@PathVariable String code) {
         return repo.findByCode(code)
                 .map(p -> { repo.delete(p); return ResponseEntity.noContent().build(); })
                 .orElse(ResponseEntity.notFound().build());
