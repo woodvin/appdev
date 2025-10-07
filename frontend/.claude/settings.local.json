@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__ide__getDiagnostics",
+      "Read(//c/Users/wovin/OneDrive/Documents/Desktop/appdev/backend/src/main/java/com/appdev/backend/domain/**)",
+      "Bash(npm run dev:*)",
+      "Read(//c/Users/wovin/OneDrive/Documents/Desktop/appdev/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

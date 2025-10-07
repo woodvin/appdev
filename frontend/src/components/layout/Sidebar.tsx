@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import ProfileDropdown from '@/components/profile/ProfileDropdown';
+import { getXpInfo, formatXp } from '@/utils/xpCalculator';
 
 interface NavItem {
   name: string;
@@ -10,16 +12,18 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { name: 'Home', href: '/', icon: '🏠' },
-  { name: 'Portfolio', href: '/dashboard', icon: '📊' },
+  { name: 'Dashboard', href: '/dashboard', icon: '📊' },
   { name: 'Compete', href: '/compete', icon: '🏆' },
-  { name: 'Learn', href: '/lessons', icon: '📚' },
   { name: 'Games', href: '/games', icon: '🎮' },
-  { name: 'Plans', href: '/plans', icon: '💳' },
+  { name: 'Lessons', href: '/lessons', icon: '📚' },
 ];
 
 export default function Sidebar() {
   const pathname = usePathname();
+
+  // TODO: Replace with actual user XP from API/state management
+  const userTotalXp = 15000; // Example XP
+  const xpInfo = getXpInfo(userTotalXp);
 
   return (
     <aside className="w-64 bg-[#151921] border-r border-[#2D3139] flex flex-col h-screen fixed left-0 top-0">
@@ -37,6 +41,27 @@ export default function Sidebar() {
             <span className="text-xs text-gray-500">Finance Intelligence</span>
           </div>
         </Link>
+      </div>
+
+      {/* Profile Section */}
+      <div className="px-6 py-4 border-b border-[#2D3139]">
+        <div className="flex items-center gap-3">
+          <ProfileDropdown />
+          <div className="flex-1 space-y-1">
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-gray-400">Level {xpInfo.level}</span>
+              <span className="text-gray-500">
+                {formatXp(xpInfo.currentXp)}/{formatXp(xpInfo.xpForNextLevel)} XP
+              </span>
+            </div>
+            <div className="h-2 bg-[#1C2028] rounded-full overflow-hidden">
+              <div
+                className="h-full bg-gradient-primary rounded-full transition-all duration-300"
+                style={{ width: `${Math.min(xpInfo.progressPercentage, 100)}%` }}
+              ></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Navigation */}
