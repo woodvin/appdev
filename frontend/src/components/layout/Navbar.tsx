@@ -28,10 +28,10 @@ export default function Navbar() {
                 Games
               </Link>
               <Link
-                href="/plans"
+                href="/subscription"
                 className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-gray-700"
               >
-                Plans
+                Pricing
               </Link>
             </div>
           </div>

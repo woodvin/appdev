@@ -29,7 +29,7 @@ export default function ProfileDropdown() {
   const menuItems: MenuItem[] = [
     { label: 'Profile', href: '/profile', icon: '👤' },
     { label: 'Settings', href: '/settings', icon: '⚙️' },
-    { label: 'Plans', href: '/plans', icon: '💳' },
+    { label: 'Subscription', href: '/subscription', icon: '💳' },
     { label: 'Achievements', href: '/achievements', icon: '🏆' },
     { label: 'Help & Support', href: '/support', icon: '❓' },
     { label: 'Log Out', onClick: () => console.log('Logging out...'), icon: '🚪', divider: true },

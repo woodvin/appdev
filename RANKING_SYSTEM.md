@@ -14,63 +14,59 @@ The ranking system is a **performance-based competitive tier system** that rewar
 
 ## Rank Tiers
 
-### Bronze Tier (Beginner)
-- **Bronze III** - 0 XP required
-- **Bronze II** - 5,000 XP
-- **Bronze I** - 15,000 XP
+### Bronze Tier (Entry Level - Levels 1-5)
+- **Bronze III** - 0 XP (~Level 1)
+- **Bronze II** - 10,000 XP (~Level 3)
+- **Bronze I** - 35,000 XP (~Level 5)
 - **Multiplier**: 1.0x XP gain
 - **Color**: #CD7F32 (Bronze)
 - **Icon**: 🥉
 
-### Silver Tier (Intermediate)
-- **Silver III** - 35,000 XP
-- **Silver II** - 75,000 XP
-- **Silver I** - 150,000 XP
-- **Multiplier**: 1.1x XP gain
+### Silver Tier (Beginner - Levels 6-12)
+- **Silver III** - 75,000 XP (~Level 9)
+- **Silver II** - 150,000 XP (~Level 11)
+- **Silver I** - 300,000 XP (~Level 15)
+- **Multiplier**: 1.05x XP gain
 - **Color**: #C0C0C0 (Silver)
 - **Icon**: 🥈
 
-### Gold Tier (Advanced)
-- **Gold III** - 300,000 XP
-- **Gold II** - 600,000 XP
-- **Gold I** - 1,000,000 XP
-- **Multiplier**: 1.2x XP gain
+### Gold Tier (Intermediate - Levels 13-22)
+- **Gold III** - 550,000 XP (~Level 18)
+- **Gold II** - 900,000 XP (~Level 20)
+- **Gold I** - 1,500,000 XP (~Level 25)
+- **Multiplier**: 1.1x XP gain
 - **Color**: #FFD700 (Gold)
 - **Icon**: 🥇
 
-### Platinum Tier (Expert)
-- **Platinum III** - 1,750,000 XP
-- **Platinum II** - 3,000,000 XP
-- **Platinum I** - 5,000,000 XP
-- **Multiplier**: 1.3x XP gain
+### Platinum Tier (Advanced - Levels 23-33)
+- **Platinum III** - 2,200,000 XP (~Level 28)
+- **Platinum II** - 3,200,000 XP (~Level 31)
+- **Platinum I** - 4,500,000 XP (~Level 36)
+- **Multiplier**: 1.15x XP gain
 - **Color**: #E5E4E2 (Platinum)
 - **Icon**: 💎
 
-### Diamond Tier (Elite)
-- **Diamond III** - 8,000,000 XP
-- **Diamond II** - 12,000,000 XP
-- **Diamond I** - 18,000,000 XP
-- **Multiplier**: 1.4x XP gain
+### Diamond Tier (Expert - Levels 34-44)
+- **Diamond III** - 6,200,000 XP (~Level 39)
+- **Diamond II** - 8,200,000 XP (~Level 42)
+- **Diamond I** - 10,500,000 XP (~Level 46)
+- **Multiplier**: 1.2x XP gain
 - **Color**: #B9F2FF (Diamond Blue)
 - **Icon**: 💠
 
-### Master Tier (Professional)
-- **Master** - 25,000,000 XP
-- **Multiplier**: 1.5x XP gain
-- **Color**: #9D4EDD (Purple)
-- **Icon**: 👑
-
-### Grandmaster Tier (Champion)
-- **Grandmaster** - 35,000,000 XP
-- **Multiplier**: 1.6x XP gain
-- **Color**: #FF006E (Pink)
-- **Icon**: 🏆
-
-### Legend Tier (Ultimate)
-- **Legend** - 50,000,000 XP
-- **Multiplier**: 1.75x XP gain
+### Legend Tier (Elite Players - Levels 45-60)
+- **Legend III** - 13,000,000 XP (~Level 50)
+- **Legend II** - 16,000,000 XP (~Level 55)
+- **Legend I** - 20,000,000 XP (~Level 60)
+- **Multiplier**: 1.25x - 1.35x XP gain
 - **Color**: #FFB627 (Gold/Orange)
 - **Icon**: ⭐
+
+### Elite Tier (Top Players - Level 65+)
+- **Elite** - 25,000,000 XP (~Level 67)
+- **Multiplier**: 1.5x XP gain
+- **Color**: #FF006E (Pink)
+- **Icon**: 👑
 
 ## Performance Bonus System
 

@@ -154,22 +154,61 @@ export default function CompetePage() {
         </Card>
       </div>
 
-      {/* Rank Tiers Info */}
+      {/* Rank Tiers Interactive */}
       <Card variant="elevated" padding="lg">
-        <h3 className="text-lg font-bold text-white mb-4">🏆 Rank Tiers</h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-lg font-bold text-white">🏆 Competitive Ranks</h3>
+          <p className="text-xs text-gray-500">Hover to explore each tier</p>
+        </div>
+
+        <div className="grid grid-cols-7 gap-2">
           {[
-            { name: 'Bronze', icon: '🥉', xp: '0-4.9k', color: 'text-orange-400', bgColor: 'bg-orange-500/10' },
-            { name: 'Silver', icon: '🥈', xp: '5k-9.9k', color: 'text-gray-300', bgColor: 'bg-gray-500/10' },
-            { name: 'Gold', icon: '🥇', xp: '10k-24.9k', color: 'text-yellow-300', bgColor: 'bg-yellow-500/10' },
-            { name: 'Platinum', icon: '⭐', xp: '25k-49.9k', color: 'text-purple-400', bgColor: 'bg-purple-500/10' },
-            { name: 'Diamond', icon: '💎', xp: '50k-99.9k', color: 'text-cyan-400', bgColor: 'bg-cyan-500/10' },
-            { name: 'Legend', icon: '👑', xp: '100k+', color: 'text-yellow-400', bgColor: 'bg-yellow-500/10' },
-          ].map((tier) => (
-            <div key={tier.name} className={`p-3 rounded-lg border border-[#2D3139] ${tier.bgColor} text-center`}>
-              <div className="text-2xl mb-1">{tier.icon}</div>
-              <p className={`text-sm font-bold ${tier.color}`}>{tier.name}</p>
-              <p className="text-xs text-gray-500 mt-1">{tier.xp} XP</p>
+            { name: 'Bronze', icon: '🥉', color: 'text-orange-400', bg: 'bg-orange-500/10', border: 'border-orange-500/30', gradient: 'from-orange-500/20 to-orange-600/5', xp: '0 - 50k', tagline: 'Everyone starts here', divisions: 'V - I' },
+            { name: 'Silver', icon: '🥈', color: 'text-gray-300', bg: 'bg-gray-500/10', border: 'border-gray-500/30', gradient: 'from-gray-500/20 to-gray-600/5', xp: '50k - 150k', tagline: 'Rising through the ranks', divisions: 'V - I' },
+            { name: 'Gold', icon: '🥇', color: 'text-yellow-300', bg: 'bg-yellow-500/10', border: 'border-yellow-500/30', gradient: 'from-yellow-500/20 to-yellow-600/5', xp: '150k - 400k', tagline: 'Skill meets dedication', divisions: 'V - I' },
+            { name: 'Platinum', icon: '⭐', color: 'text-purple-400', bg: 'bg-purple-500/10', border: 'border-purple-500/30', gradient: 'from-purple-500/20 to-purple-600/5', xp: '400k - 1M', tagline: 'Elite performance unlocked', divisions: 'III - I' },
+            { name: 'Diamond', icon: '💎', color: 'text-cyan-400', bg: 'bg-cyan-500/10', border: 'border-cyan-500/30', gradient: 'from-cyan-500/20 to-cyan-600/5', xp: '1M - 2.5M', tagline: 'Unbreakable determination', divisions: 'III - I' },
+            { name: 'Legend', icon: '⚡', color: 'text-yellow-400', bg: 'bg-yellow-500/10', border: 'border-yellow-500/30', gradient: 'from-yellow-500/20 to-yellow-600/5', xp: '2.5M - 5M', tagline: 'Where myths are born', divisions: 'III - I' },
+            { name: 'Elite', icon: '👑', color: 'text-pink-400', bg: 'bg-pink-500/10', border: 'border-pink-500/30', gradient: 'from-pink-500/20 to-pink-600/5', xp: '5M+', tagline: 'The absolute pinnacle', divisions: 'None' },
+          ].map((tier, index) => (
+            <div
+              key={tier.name}
+              className="group relative"
+            >
+              {/* Expandable Card */}
+              <div className={`${tier.bg} ${tier.border} bg-gradient-to-br ${tier.gradient} border rounded-lg overflow-hidden transition-all duration-500 cursor-pointer group-hover:shadow-2xl group-hover:scale-105 h-auto`}>
+                {/* Collapsed State - Icon & Name */}
+                <div className="p-3 text-center">
+                  <div className="text-3xl mb-1 transition-transform duration-300 group-hover:scale-110">{tier.icon}</div>
+                  <p className={`text-xs font-bold ${tier.color} transition-all duration-300`}>{tier.name}</p>
+                </div>
+
+                {/* Expanded Details - Slides down on hover */}
+                <div className="max-h-0 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
+                  <div className="px-3 pb-3 space-y-2">
+                    {/* Divider */}
+                    <div className={`h-px ${tier.bg} opacity-50`}></div>
+
+                    {/* Tier Number */}
+                    <p className="text-xs text-gray-500 text-center">Tier {index + 1} of 7</p>
+
+                    {/* Tagline */}
+                    <p className="text-xs text-white font-medium italic text-center leading-relaxed">"{tier.tagline}"</p>
+
+                    {/* Stats */}
+                    <div className="space-y-1.5 text-xs">
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-400">XP</span>
+                        <span className={`font-bold ${tier.color}`}>{tier.xp}</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-400">Divs</span>
+                        <span className={`font-bold ${tier.color}`}>{tier.divisions}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>

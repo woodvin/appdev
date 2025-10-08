@@ -3,41 +3,51 @@ package com.appdev.backend.domain;
 /**
  * Ranking tiers based on XP and performance metrics.
  * Each rank has minimum requirements and visual styling.
+ *
+ * Division Structure:
+ * - Bronze, Silver, Gold: 5 divisions each (V, IV, III, II, I)
+ * - Platinum, Diamond, Legend: 3 divisions each (III, II, I)
+ * - Elite: Single tier (no divisions)
  */
 public enum Rank {
-    // Bronze Tier
-    BRONZE_III("Bronze III", 0, "#CD7F32", 1.0),
-    BRONZE_II("Bronze II", 5000, "#CD7F32", 1.0),
-    BRONZE_I("Bronze I", 15000, "#CD7F32", 1.0),
+    // Bronze Tier - 5 Divisions (0 - 50k XP, 10k per division)
+    BRONZE_V("Bronze V", 0, "#CD7F32", 1.0),
+    BRONZE_IV("Bronze IV", 10000, "#CD7F32", 1.0),
+    BRONZE_III("Bronze III", 20000, "#CD7F32", 1.0),
+    BRONZE_II("Bronze II", 30000, "#CD7F32", 1.0),
+    BRONZE_I("Bronze I", 40000, "#CD7F32", 1.0),
 
-    // Silver Tier
-    SILVER_III("Silver III", 35000, "#C0C0C0", 1.1),
-    SILVER_II("Silver II", 75000, "#C0C0C0", 1.1),
-    SILVER_I("Silver I", 150000, "#C0C0C0", 1.1),
+    // Silver Tier - 5 Divisions (50k - 150k XP, 20k per division)
+    SILVER_V("Silver V", 50000, "#C0C0C0", 1.05),
+    SILVER_IV("Silver IV", 70000, "#C0C0C0", 1.05),
+    SILVER_III("Silver III", 90000, "#C0C0C0", 1.05),
+    SILVER_II("Silver II", 110000, "#C0C0C0", 1.05),
+    SILVER_I("Silver I", 130000, "#C0C0C0", 1.05),
 
-    // Gold Tier
-    GOLD_III("Gold III", 300000, "#FFD700", 1.2),
-    GOLD_II("Gold II", 600000, "#FFD700", 1.2),
-    GOLD_I("Gold I", 1000000, "#FFD700", 1.2),
+    // Gold Tier - 5 Divisions (150k - 400k XP, 50k per division)
+    GOLD_V("Gold V", 150000, "#FFD700", 1.1),
+    GOLD_IV("Gold IV", 200000, "#FFD700", 1.1),
+    GOLD_III("Gold III", 250000, "#FFD700", 1.1),
+    GOLD_II("Gold II", 300000, "#FFD700", 1.1),
+    GOLD_I("Gold I", 350000, "#FFD700", 1.1),
 
-    // Platinum Tier
-    PLATINUM_III("Platinum III", 1750000, "#E5E4E2", 1.3),
-    PLATINUM_II("Platinum II", 3000000, "#E5E4E2", 1.3),
-    PLATINUM_I("Platinum I", 5000000, "#E5E4E2", 1.3),
+    // Platinum Tier - 3 Divisions (400k - 1M XP, 200k per division)
+    PLATINUM_III("Platinum III", 400000, "#E5E4E2", 1.15),
+    PLATINUM_II("Platinum II", 600000, "#E5E4E2", 1.15),
+    PLATINUM_I("Platinum I", 800000, "#E5E4E2", 1.15),
 
-    // Diamond Tier
-    DIAMOND_III("Diamond III", 8000000, "#B9F2FF", 1.4),
-    DIAMOND_II("Diamond II", 12000000, "#B9F2FF", 1.4),
-    DIAMOND_I("Diamond I", 18000000, "#B9F2FF", 1.4),
+    // Diamond Tier - 3 Divisions (1M - 2.5M XP, 500k per division)
+    DIAMOND_III("Diamond III", 1000000, "#B9F2FF", 1.2),
+    DIAMOND_II("Diamond II", 1500000, "#B9F2FF", 1.2),
+    DIAMOND_I("Diamond I", 2000000, "#B9F2FF", 1.2),
 
-    // Master Tier - Elite players
-    MASTER("Master", 25000000, "#9D4EDD", 1.5),
+    // Legend Tier - 3 Divisions (2.5M - 5M XP, ~833k per division)
+    LEGEND_III("Legend III", 2500000, "#FFB627", 1.25),
+    LEGEND_II("Legend II", 3333333, "#FFB627", 1.3),
+    LEGEND_I("Legend I", 4166666, "#FFB627", 1.35),
 
-    // Grandmaster Tier - Top 100
-    GRANDMASTER("Grandmaster", 35000000, "#FF006E", 1.6),
-
-    // Legend Tier - Top 10
-    LEGEND("Legend", 50000000, "#FFB627", 1.75);
+    // Elite Tier - Top players (5M+ XP)
+    ELITE("Elite", 5000000, "#FF006E", 1.5);
 
     private final String displayName;
     private final long minXp;
@@ -80,8 +90,8 @@ public enum Rank {
     }
 
     /**
-     * Get the division within the tier (e.g., "III", "II", "I")
-     * Returns empty string for single-tier ranks like MASTER
+     * Get the division within the tier (e.g., "V", "IV", "III", "II", "I")
+     * Returns empty string for single-tier ranks like ELITE
      */
     public String getDivision() {
         String name = this.name();
@@ -108,7 +118,7 @@ public enum Rank {
         long effectiveXp = (long) (totalXp * performanceBonus);
 
         // Find the highest rank the user qualifies for
-        Rank currentRank = BRONZE_III;
+        Rank currentRank = BRONZE_V;
         for (Rank rank : Rank.values()) {
             if (effectiveXp >= rank.getMinXp()) {
                 currentRank = rank;

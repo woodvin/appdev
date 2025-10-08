@@ -4,7 +4,11 @@
       "mcp__ide__getDiagnostics",
       "Read(//c/Users/wovin/OneDrive/Documents/Desktop/appdev/backend/src/main/java/com/appdev/backend/domain/**)",
       "Bash(npm run dev:*)",
-      "Read(//c/Users/wovin/OneDrive/Documents/Desktop/appdev/**)"
+      "Read(//c/Users/wovin/OneDrive/Documents/Desktop/appdev/**)",
+      "Bash(git push:*)",
+      "Bash(cat:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

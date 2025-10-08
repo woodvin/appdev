@@ -42,7 +42,7 @@ export default function Home() {
                 Start Learning — Free
               </Button>
             </Link>
-            <Link href="/plans">
+            <Link href="/subscription">
               <Button variant="outline" size="lg">
                 Go Premium
               </Button>
@@ -64,7 +64,7 @@ export default function Home() {
               <p className="text-sm text-gray-500">Assets Managed</p>
             </div>
             <div className="space-y-1">
-              <p className="text-4xl font-bold text-gradient-primary font-numeric">500+</p>
+              <p className="text-4xl font-bold text-gradient-primary font-numeric">100+</p>
               <p className="text-sm text-gray-500">Lessons</p>
             </div>
           </div>
@@ -319,7 +319,7 @@ export default function Home() {
                 Start Free
               </Button>
             </Link>
-            <Link href="/plans">
+            <Link href="/subscription">
               <Button variant="secondary" size="lg">
                 View Pricing
               </Button>

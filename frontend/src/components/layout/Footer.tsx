@@ -21,7 +21,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/plans" className="text-sm text-gray-600 hover:text-gray-900">
+                <Link href="/subscription" className="text-sm text-gray-600 hover:text-gray-900">
                   Pricing
                 </Link>
               </li>
